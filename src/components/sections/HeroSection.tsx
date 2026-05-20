@@ -13,7 +13,7 @@ export default function HeroSection() {
 
   return (
     <div className="relative bg-white flex flex-col">
-      <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-darker pt-24 pb-16">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-darker py-16">
         
         {/* Background Video */}
         <video
