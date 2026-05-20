@@ -32,13 +32,13 @@ export default function HeroSection() {
         <div className="absolute inset-0 z-0 bg-gradient-to-t from-darker/80 via-transparent to-darker/30" />
         <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_left_center,rgba(134,177,32,0.25),transparent_60%)]" />
         
-        <div className="container relative z-10 px-4 mx-auto max-w-7xl flex flex-col items-start justify-center text-left">
+        <div className="container relative z-10 px-4 mx-auto max-w-7xl flex flex-col items-start justify-center text-left -mt-12 md:-mt-24">
           
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="mb-6 mt-8 md:mt-12"
+            className="mb-6 mt-4"
           >
             <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-gray-200 text-sm font-medium tracking-wide shadow-xl">
               <span className="relative flex h-2 w-2">
