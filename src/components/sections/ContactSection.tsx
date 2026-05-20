@@ -37,7 +37,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-xl font-title font-bold text-darker mb-2 group-hover:text-brand transition-colors">Oficinas y Bases Operativas</h4>
                   <ul className="space-y-2 text-gray-500 font-medium">
-                    <li><strong className="text-darker">Casa Matriz Iquique:</strong> Bernardo O'Higgins 1426</li>
+                    <li><strong className="text-darker">Casa Matriz Iquique:</strong> Bernardo O&apos;Higgins 1426</li>
                     <li><strong className="text-darker">Base Pozo Almonte:</strong> Av. Comercio 03</li>
                   </ul>
                 </div>
