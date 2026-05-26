@@ -15,7 +15,7 @@ const config: Config = {
         darker: "#172554", // Very dark corporate blue
         brand: "#86B120", // The corporate green
         brandLight: "#A3D133", // Lighter green for hovers
-        yellow: "#FFC107", // Complementary yellow (intense heavy equipment yellow)
+        yellow: "#FFE600", // Much more yellow (pure Caterpillar/industrial yellow)
         light: "#FBFEF8", // Off-white
         gray: {
           50: '#f9fafb',

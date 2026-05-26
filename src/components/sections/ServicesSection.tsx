@@ -3,131 +3,174 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Truck, Droplet, Tractor, Box, Map, PackageOpen } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
     icon: Truck,
     title: "Carga a Granel en Bateas",
     description: "Transporte de sales, áridos, concentrados y óxidos de cobre con alta capacidad y eficiencia comprobada.",
-    iconBg: "bg-brand/10",
-    iconColor: "text-brand",
-    borderColor: "border-brand/20",
+    iconBg: "bg-[#86B120]/10",
+    iconColor: "text-[#86B120]",
+    borderColor: "border-[#86B120]/20",
+    href: "/servicios/transporte-granel",
+    image: "/images/portfolio/img-12.jpeg"
   },
   {
     icon: Box,
     title: "Cargas Sobredimensionadas",
     description: "Movimiento experto de cargas de gran volumen y sobrepeso bajo estricta normativa y coordinación de escolta.",
-    iconBg: "bg-yellow/10",
-    iconColor: "text-yellow",
-    borderColor: "border-yellow/20",
+    iconBg: "bg-[#FF9A00]/10",
+    iconColor: "text-[#FF9A00]",
+    borderColor: "border-[#FF9A00]/20",
+    href: "/servicios/carga-sobredimensionada",
+    image: "/images/portfolio/img-24.jpeg"
   },
   {
     icon: Droplet,
     title: "Transporte de Líquidos",
     description: "Traslado seguro de ácido, agua industrial y diésel, cumpliendo todos los estándares de prevención medioambiental.",
-    iconBg: "bg-brand/10",
-    iconColor: "text-brand",
-    borderColor: "border-brand/20",
+    iconBg: "bg-[#86B120]/10",
+    iconColor: "text-[#86B120]",
+    borderColor: "border-[#86B120]/20",
+    href: "/servicios/transporte-liquidos",
+    image: "/images/portfolio/img-40.jpeg"
   },
   {
     icon: Tractor,
     title: "Servicio de Cama Baja",
     description: "Servicio especializado para la movilización segura y eficiente de maquinaria y equipos pesados del sector.",
-    iconBg: "bg-yellow/10",
-    iconColor: "text-yellow",
-    borderColor: "border-yellow/20",
+    iconBg: "bg-[#FF9A00]/10",
+    iconColor: "text-[#FF9A00]",
+    borderColor: "border-[#FF9A00]/20",
+    href: "/servicios/cama-baja",
+    image: "/images/portfolio/img-66.jpeg"
   },
   {
     icon: PackageOpen,
     title: "Ramplas y Portacontenedores",
     description: "Equipos de cama plana para estiba y transporte ágil de contenedores marítimos e industriales de 20 y 40 pies.",
-    iconBg: "bg-brand/10",
-    iconColor: "text-brand",
-    borderColor: "border-brand/20",
+    iconBg: "bg-[#86B120]/10",
+    iconColor: "text-[#86B120]",
+    borderColor: "border-[#86B120]/20",
+    href: "/servicios/portacontenedores",
+    image: "/images/portfolio/img-51.jpeg"
   },
   {
     icon: Map,
     title: "Logística Integral Especial",
     description: "Coordinación de transporte punto a punto, asegurando trazabilidad, seguridad y estricto cumplimiento de tiempos.",
-    iconBg: "bg-yellow/10",
-    iconColor: "text-yellow",
-    borderColor: "border-yellow/20",
+    iconBg: "bg-[#FF9A00]/10",
+    iconColor: "text-[#FF9A00]",
+    borderColor: "border-[#FF9A00]/20",
+    href: "/servicios/logistica-integral",
+    image: "/images/portfolio/img-62.jpeg"
   }
 ];
 
-export default function ServicesSection() {
+export default function ServicesSection({ hideHeader = false }: { hideHeader?: boolean }) {
   return (
-    <section className="py-24 bg-dark relative overflow-hidden" id="servicios">
-      {/* Decorative Gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-darker via-dark to-dark opacity-80" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-yellow/5 rounded-full blur-[100px] pointer-events-none" />
+    <section className="relative py-24 bg-slate-50 overflow-hidden" id="servicios">
+      {/* Light Industrial Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium tracking-wide mb-6"
-          >
-            <span className="w-2 h-2 rounded-full bg-brand animate-pulse" />
-            Capacidad Operativa
-          </motion.div>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-light text-white mb-6"
-          >
-            Nuestros <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow via-brandLight to-brand">Servicios Logísticos</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-300 font-light text-lg md:text-xl leading-relaxed"
-          >
-            Soluciones de transporte especializadas para asegurar la continuidad de las industrias más exigentes del norte del país.
-          </motion.p>
-        </div>
+        {!hideHeader && (
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="inline-flex items-center gap-2.5 mb-6 select-none"
+            >
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#86B120] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#86B120]"></span>
+              </span>
+              <span className="text-slate-500 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em]">
+                Capacidad Operativa
+              </span>
+            </motion.div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-800 mb-6 leading-tight"
+            >
+              Nuestros <span className="font-light text-[#86B120]">Servicios Logísticos</span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: 0.2 }}
+              className="text-slate-500 font-light text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
+            >
+              Soluciones de transporte especializadas para asegurar la continuidad de las industrias más exigentes del norte del país.
+            </motion.p>
+          </div>
+        )}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 ${hideHeader ? 'mt-4' : ''}`}>
           {services.map((service, index) => {
             const Icon = service.icon;
+            const isGreenTheme = service.iconColor === "text-[#86B120]";
             return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="group relative bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,0,0,0.3)] flex flex-col"
+                transition={{ delay: index * 0.08, duration: 0.5 }}
+                className="flex"
               >
-                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-8 ${service.iconBg} border ${service.borderColor} group-hover:scale-110 transition-transform duration-300 shadow-inner`}>
-                  <Icon className={`w-7 h-7 ${service.iconColor}`} strokeWidth={1.5} />
-                </div>
-                
-                <h3 className="text-xl font-medium text-white mb-4">
-                  {service.title}
-                </h3>
-                
-                <p className="text-gray-400 font-light leading-relaxed mb-8 flex-grow">
-                  {service.description}
-                </p>
-                
-                <Link 
-                  href="/servicios" 
-                  className="inline-flex items-center text-sm font-medium text-gray-300 group-hover:text-brand transition-colors mt-auto"
+                <Link
+                  href={service.href}
+                  className={`group relative w-full bg-white rounded-3xl border border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-2 flex flex-col overflow-hidden hover:shadow-lg ${
+                    isGreenTheme 
+                      ? "hover:border-[#86B120]/30" 
+                      : "hover:border-[#FF9A00]/30"
+                  }`}
                 >
-                  Conocer más <ArrowRight className="ml-2 w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                  {/* Card Image Header */}
+                  <div className="relative h-56 w-full overflow-hidden bg-slate-100">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    />
+                    {/* Shadow overlay to blend with the card background */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-90" />
+                  </div>
+
+                  {/* Floating Icon Badge centered on the bottom border of the image */}
+                  <div className={`absolute top-56 left-8 -translate-y-1/2 z-20 w-14 h-14 rounded-2xl flex items-center justify-center bg-white shadow-md border border-slate-50 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className={`w-6 h-6 ${service.iconColor}`} strokeWidth={1.5} />
+                  </div>
+
+                  {/* Card Body */}
+                  <div className="pt-10 px-8 pb-8 flex-grow flex flex-col relative z-10 bg-white">
+                    <h3 className="text-xl font-semibold text-slate-800 mb-3 group-hover:text-slate-900 transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-slate-500 font-light leading-relaxed mb-8 flex-grow text-sm sm:text-base">
+                      {service.description}
+                    </p>
+                    
+                    <div 
+                      className={`inline-flex items-center text-sm font-medium transition-colors mt-auto ${
+                        isGreenTheme ? "text-[#86B120]" : "text-[#FF9A00]"
+                      }`}
+                    >
+                      Conocer más <ArrowRight className="ml-2 w-4 h-4 translate-x-0 group-hover:translate-x-1.5 transition-transform duration-300" />
+                    </div>
+                  </div>
                 </Link>
-                
-                {/* Hover gradient border effect */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-brand/30 rounded-2xl transition-colors duration-300 pointer-events-none" style={{ maskImage: 'linear-gradient(to bottom, black, transparent)' }} />
               </motion.div>
             );
           })}
@@ -137,15 +180,15 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="mt-16 text-center"
+          transition={{ delay: 0.4 }}
+          className="mt-20 text-center"
         >
           <Link
-            href="/servicios"
-            className="inline-flex items-center px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium transition-all duration-300 hover:border-white/40 group"
+            href="/flota"
+            className="inline-flex items-center gap-2.5 text-slate-600 hover:text-[#86B120] transition-colors group text-sm font-medium px-8 py-3.5 rounded-full bg-white border border-slate-200 hover:border-[#86B120]/30 hover:bg-[#86B120]/5 shadow-sm"
           >
-            Ver Catálogo de Equipos
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform text-brand" />
+            Ver Catálogo de Equipos (Flota)
+            <ArrowRight className="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
 
@@ -153,3 +196,4 @@ export default function ServicesSection() {
     </section>
   );
 }
+

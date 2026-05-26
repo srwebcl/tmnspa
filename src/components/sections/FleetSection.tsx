@@ -75,50 +75,38 @@ export default function FleetSection() {
           >
             <h3 className="text-3xl font-title font-bold text-darker mb-6">Equipamiento Especializado</h3>
             <p className="text-gray-600 mb-8 leading-relaxed text-lg">
-              Nuestros semirremolques integran tecnología de marcas líderes mundiales como Tremac, Randon, Goren y Pravaz. Abarcamos tolvas, portacontenedores, camas bajas y ramplas para múltiples necesidades logísticas.
+              15 tractocamiones propios y 19 semirremolques especializados. No tercerizamos el transporte, lo que nos permite garantizar el estándar TMN en cada ruta.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                { title: 'Volvo FH500 / FH540', desc: 'Alta potencia en ruta' },
-                { title: 'Volvo FM420 / FM460', desc: 'Versatilidad minera' },
-                { title: 'Scania R500', desc: 'Rendimiento y seguridad' },
-                { title: 'Bateas 20m3', desc: 'Transporte a granel' },
-                { title: 'Camas Bajas', desc: 'Maquinaria pesada' },
-                { title: 'Portacontenedores', desc: 'Logística multimodal' }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex items-start gap-3 hover:border-brand hover:shadow-md transition-all">
-                  <CheckCircle className="w-6 h-6 text-yellow flex-shrink-0" />
-                  <div>
-                    <h4 className="font-bold text-darker text-sm">{item.title}</h4>
-                    <p className="text-xs text-gray-500">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-darker mb-4 uppercase tracking-wide flex items-center gap-2"><div className="w-2 h-2 bg-brand rounded-full"></div> Tractocamiones (15 Unidades)</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-brand flex-shrink-0" /><span className="text-gray-600 text-sm">Volvo FH500 y FH540 (Alta tracción y seguridad)</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-brand flex-shrink-0" /><span className="text-gray-600 text-sm">Volvo FM420 y FM460 (Versatilidad en faena)</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-brand flex-shrink-0" /><span className="text-gray-600 text-sm">Scania R500 (Rendimiento superior)</span></li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-darker mb-4 uppercase tracking-wide flex items-center gap-2"><div className="w-2 h-2 bg-yellow rounded-full"></div> Semirremolques (19 Unidades)</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-yellow flex-shrink-0" /><span className="text-gray-600 text-sm">Bateas Tolva Tremac y Randon 20m³ (Granel)</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-yellow flex-shrink-0" /><span className="text-gray-600 text-sm">Cama Baja Tremac 3 Ejes (Maquinaria pesada)</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-yellow flex-shrink-0" /><span className="text-gray-600 text-sm">Portacontenedores 20&apos; y 40&apos; Tremac y Pravaz</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-yellow flex-shrink-0" /><span className="text-gray-600 text-sm">Ramplas 3 Ejes y Rampla Rebajada Goren</span></li>
+                </ul>
+              </div>
             </div>
+
+            <div className="mt-8 bg-gray-50 border-l-4 border-gray-300 p-4 rounded-r-xl">
+              <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">
+                * Flota auditada y disponible para inspección técnica. Revisión técnica, SOAP y seguros de responsabilidad civil al día.
+              </p>
+            </div>
+
           </motion.div>
         </div>
-
-        {/* Clients Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8 }}
-          className="bg-darker rounded-[2rem] p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl"
-        >
-          <div className="absolute inset-0 bg-brand/5"></div>
-          <h3 className="relative z-10 text-xl md:text-2xl font-title font-bold text-yellow mb-12 uppercase tracking-[0.2em]">
-            Clientes que confían en nosotros
-          </h3>
-          <div className="relative z-10 flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
-            {['COSAYACH', 'MINERA ACF', 'QUIBORAX', 'SALAR ALBEMARLE', 'KOMATSU', 'SK RENTAL', 'AGUNSA'].map((client, i) => (
-              <span key={i} className="font-display text-2xl md:text-3xl font-black text-gray-400 hover:text-white transition-colors duration-300">
-                {client}
-              </span>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

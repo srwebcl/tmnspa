@@ -10,7 +10,7 @@ export default function ServiciosPage() {
         imagePath="/images/portfolio/img-50.jpeg"
         breadcrumbs={[{ label: "Servicios", href: "/servicios" }]}
       />
-      <ServicesSection />
+      <ServicesSection hideHeader={true} />
     </main>
   );
 }

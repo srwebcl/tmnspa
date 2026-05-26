@@ -10,7 +10,7 @@ export default function ContactoPage() {
         imagePath="/images/portfolio/img-49.jpeg"
         breadcrumbs={[{ label: "Contacto", href: "/contacto" }]}
       />
-      <ContactSection />
+      <ContactSection showInfo={true} />
     </main>
   );
 }

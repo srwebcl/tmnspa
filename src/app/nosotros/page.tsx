@@ -1,4 +1,5 @@
 import AboutSection from "@/components/sections/AboutSection";
+import CompanyDetailsSection from "@/components/sections/CompanyDetailsSection";
 import PageHeader from "@/components/layout/PageHeader";
 
 export default function NosotrosPage() {
@@ -11,6 +12,7 @@ export default function NosotrosPage() {
         breadcrumbs={[{ label: "Quiénes Somos", href: "/nosotros" }]}
       />
       <AboutSection />
+      <CompanyDetailsSection />
     </main>
   );
 }
