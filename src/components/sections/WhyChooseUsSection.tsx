@@ -30,12 +30,14 @@ const stats = [
     desc: "Conocimiento profundo de las rutas y faenas del norte."
   }
 ];
-
 export default function WhyChooseUsSection() {
   return (
     <section className="relative py-24 bg-slate-50 overflow-hidden" id="diferenciadores">
+      {/* Subtle Truck Background Image with Parallax */}
+      <div className="absolute inset-0 bg-[url('/images/portfolio/camion-tmns.jpeg')] bg-cover bg-center bg-fixed opacity-10 pointer-events-none" />
+
       {/* Light Industrial Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
       
       {/* Shipping Network Vector Background Illustration - Extremely Subtle */}
       <div className="absolute right-0 top-1/4 w-[45%] h-2/3 pointer-events-none -z-10 opacity-20 select-none hidden lg:block">

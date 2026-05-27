@@ -1,4 +1,4 @@
-import ServicesSection from "@/components/sections/ServicesSection";
+import ServicesLightSection from "@/components/sections/ServicesLightSection";
 import PageHeader from "@/components/layout/PageHeader";
 
 export default function ServiciosPage() {
@@ -10,7 +10,7 @@ export default function ServiciosPage() {
         imagePath="/images/portfolio/img-50.jpeg"
         breadcrumbs={[{ label: "Servicios", href: "/servicios" }]}
       />
-      <ServicesSection hideHeader={true} />
+      <ServicesLightSection hideHeader={true} />
     </main>
   );
 }
