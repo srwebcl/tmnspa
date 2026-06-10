@@ -7,9 +7,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const VIDEOS = [
-  "/videos/camion-movimiento.mp4",
-  "/videos/hero-drone.mp4",
-  "/videos/camiones-tmn.mp4"
+  "/videos/Camiones_en_movimiento_rutas_norte_202606081842.mp4"
 ];
 
 export default function HeroSection() {
@@ -93,7 +91,7 @@ export default function HeroSection() {
               </motion.span>
               <motion.span 
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }} 
-                className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow via-brandLight to-brand drop-shadow-md pb-3 pt-1"
+                className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brandLight to-brand drop-shadow-md pb-3 pt-1"
               >
                 Logística Industrial
               </motion.span>
@@ -132,10 +130,10 @@ export default function HeroSection() {
               {/* Button 2: Green Gradient (M colors) */}
               <Link
                 href="/servicios"
-                className="relative overflow-hidden w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A859] to-brand transition-all duration-500 shadow-[0_0_30px_rgba(134,177,32,0.2)] hover:shadow-[0_0_50px_rgba(134,177,32,0.4)] hover:-translate-y-1 group border border-white/20"
+                className="relative overflow-hidden w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-yellow to-[#FF9A00] transition-all duration-500 shadow-[0_0_30px_rgba(255,230,0,0.25)] hover:shadow-[0_0_50px_rgba(255,230,0,0.45)] hover:-translate-y-1 group border border-white/20"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
-                <span className="relative z-10 flex items-center justify-center font-bold text-white tracking-wide text-sm">
+                <span className="relative z-10 flex items-center justify-center font-bold text-darker tracking-wide text-sm">
                   Ver Capacidades
                 </span>
               </Link>

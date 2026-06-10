@@ -24,7 +24,7 @@ export default function ContactSection({ showInfo = false }: ContactSectionProps
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#071324] to-[#0a1523] overflow-hidden" id="contacto">
       {/* Soft top gradient line to transition from the light section */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#86B120]/30 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand/30 to-transparent" />
 
       {/* Decorative Blur */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-yellow/5 rounded-full blur-[120px] pointer-events-none -z-10 translate-y-1/2 -translate-x-1/2"></div>

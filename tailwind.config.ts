@@ -11,12 +11,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        dark: "#1E3A8A", // Corporate Blue
-        darker: "#172554", // Very dark corporate blue
-        brand: "#86B120", // The corporate green
-        brandLight: "#A3D133", // Lighter green for hovers
-        yellow: "#FFE600", // Much more yellow (pure Caterpillar/industrial yellow)
-        light: "#FBFEF8", // Off-white
+        dark: "#0033A0", // Azul Oscuro
+        darker: "#001a52", // Azul Oscuro más oscuro para contrastes
+        brand: "#0057FF", // Azul TMN
+        brandLight: "#337AFF", // Azul TMN más claro para hovers
+        yellow: "#FF6A00", // Naranjo SPA (reemplaza al amarillo)
+        light: "#FFFFFF", // Blanco
         gray: {
           50: '#f9fafb',
           100: '#f3f4f6',

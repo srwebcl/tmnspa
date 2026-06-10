@@ -63,7 +63,7 @@ export default function SafetySection() {
           >
             {/* Glassmorphism Card */}
             <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[2rem] p-10 shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
-              <div className="absolute top-0 right-10 w-24 h-1 bg-gradient-to-r from-brand to-yellow rounded-b-full"></div>
+              <div className="absolute top-0 right-10 w-24 h-1 bg-gradient-to-r from-brand to-brandLight rounded-b-full"></div>
               
               <h3 className="text-2xl font-title font-bold text-white mb-8 flex items-center gap-3">
                 <BrainCircuit className="text-yellow w-8 h-8" />

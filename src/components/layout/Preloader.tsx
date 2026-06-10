@@ -48,7 +48,7 @@ export default function Preloader() {
             transition={{ delay: 0.3 }}
           >
             <motion.div
-              className="h-full bg-gradient-to-r from-brand to-yellow"
+              className="h-full bg-gradient-to-r from-brandLight to-brand"
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
