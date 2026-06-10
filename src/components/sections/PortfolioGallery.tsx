@@ -26,6 +26,7 @@ export default function PortfolioGallery() {
               onClick={() => setSelectedImg(img.src)}
             >
               <div className="absolute inset-0 bg-darker/20 group-hover:bg-transparent transition-colors z-10 duration-300" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img.src} alt={img.alt} className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
             </motion.div>
           ))}
@@ -36,7 +37,8 @@ export default function PortfolioGallery() {
       {selectedImg && (
         <div className="fixed inset-0 z-50 bg-darker/95 flex items-center justify-center p-4 md:p-10" onClick={() => setSelectedImg(null)}>
           <button className="absolute top-6 right-6 text-white text-4xl hover:text-yellow transition-colors">&times;</button>
-          <img src={selectedImg} className="max-w-full max-h-full rounded-2xl shadow-2xl object-contain" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={selectedImg} alt="Imagen ampliada" className="max-w-full max-h-full rounded-2xl shadow-2xl object-contain" />
         </div>
       )}
     </section>

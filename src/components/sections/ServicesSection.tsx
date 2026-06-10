@@ -53,7 +53,16 @@ const services = [
 
 // Componente interno para el fondo temático de transportes (Estelas de luz / Highway Trails)
 const LightTrailsBackground = () => {
-  const [trails, setTrails] = useState<any[]>([]);
+  const [trails, setTrails] = useState<Array<{
+    id: number;
+    width: number;
+    y: number;
+    color: string;
+    duration: number;
+    delay: number;
+    isLeftToRight: boolean;
+    height: string;
+  }>>([]);
 
   useEffect(() => {
     // Colores corporativos y neutros para las estelas
