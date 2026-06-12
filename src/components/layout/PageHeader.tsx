@@ -35,14 +35,14 @@ export default function PageHeader({ title, subtitle, imagePath, breadcrumbs }: 
         >
           {/* Breadcrumbs */}
           <div className="flex items-center justify-center gap-2 text-sm font-medium text-slate-400 mb-8">
-            <Link href="/" className="hover:text-[#86B120] transition-colors">Inicio</Link>
+            <Link href="/" className="hover:text-brandLight transition-colors">Inicio</Link>
             {breadcrumbs.map((crumb, idx) => (
               <div key={idx} className="flex items-center gap-2">
                 <ChevronRight className="w-4 h-4 text-slate-600" />
                 {idx === breadcrumbs.length - 1 ? (
                   <span className="text-white">{crumb.label}</span>
                 ) : (
-                  <Link href={crumb.href} className="hover:text-[#86B120] transition-colors">
+                  <Link href={crumb.href} className="hover:text-brandLight transition-colors">
                     {crumb.label}
                   </Link>
                 )}

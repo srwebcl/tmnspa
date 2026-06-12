@@ -47,7 +47,7 @@ export default function Footer() {
           {/* Column 2: Services links */}
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6 flex items-center gap-2.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#86B120] shadow-[0_0_8px_rgba(134,177,32,0.6)]" /> 
+              <span className="w-1.5 h-1.5 rounded-full bg-brand shadow-[0_0_8px_rgba(0,87,255,0.6)]" /> 
               Servicios
             </h4>
             <ul className="space-y-3 text-sm text-gray-400 font-light">
@@ -63,7 +63,7 @@ export default function Footer() {
           {/* Column 3: Company links */}
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6 flex items-center gap-2.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600] shadow-[0_0_8px_rgba(255,230,0,0.6)]" /> 
+              <span className="w-1.5 h-1.5 rounded-full bg-yellow shadow-[0_0_8px_rgba(255,230,0,0.6)]" /> 
               Empresa
             </h4>
             <ul className="space-y-3 text-sm text-gray-400 font-light">
@@ -77,17 +77,17 @@ export default function Footer() {
           {/* Column 4: Coverage links */}
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6 flex items-center gap-2.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-brandLight shadow-[0_0_8px_rgba(134,177,32,0.4)]" /> 
+              <span className="w-1.5 h-1.5 rounded-full bg-brandLight shadow-[0_0_8px_rgba(0,183,255,0.4)]" /> 
               Cobertura
             </h4>
             <ul className="space-y-4 text-sm text-gray-400 font-light">
               <li className="flex flex-col gap-0.5">
                 <span className="text-gray-200 font-medium">Iquique</span> 
-                <span className="text-xs text-gray-500">Casa Matriz · O&apos;Higgins 1426</span>
+                <a href="https://maps.google.com/?q=Bernardo+O'Higgins+1426,+Iquique,+Chile" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-brandLight transition-colors underline decoration-white/10 underline-offset-4">Casa Matriz · O&apos;Higgins 1426</a>
               </li>
               <li className="flex flex-col gap-0.5">
                 <span className="text-gray-200 font-medium">Pozo Almonte</span> 
-                <span className="text-xs text-gray-500">Base Operativa · Av. Comercio 03</span>
+                <a href="https://maps.google.com/?q=Av.+Comercio+03,+Pozo+Almonte,+Chile" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-brandLight transition-colors underline decoration-white/10 underline-offset-4">Base Operativa · Av. Comercio 03</a>
               </li>
               <li className="flex flex-col gap-0.5">
                 <span className="text-gray-200 font-medium">Norte Grande</span> 

@@ -1,16 +1,9 @@
 import AboutSection from "@/components/sections/AboutSection";
 import CompanyDetailsSection from "@/components/sections/CompanyDetailsSection";
-import PageHeader from "@/components/layout/PageHeader";
 
 export default function NosotrosPage() {
   return (
-    <main className="min-h-screen bg-light">
-      <PageHeader 
-        title="Quiénes Somos" 
-        subtitle="Conozca nuestra historia, misión y los valores que nos impulsan a ser líderes en el transporte logístico del Norte de Chile."
-        imagePath="/images/portfolio/img-47.jpeg"
-        breadcrumbs={[{ label: "Quiénes Somos", href: "/nosotros" }]}
-      />
+    <main className="min-h-screen bg-[#071324]">
       <AboutSection />
       <CompanyDetailsSection />
     </main>

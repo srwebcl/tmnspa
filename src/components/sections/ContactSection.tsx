@@ -6,6 +6,7 @@ import { MapPin, Phone, Mail, Send, ShieldCheck, Clock, ChevronDown } from "luci
 
 interface ContactSectionProps {
   showInfo?: boolean;
+  isSubpage?: boolean;
 }
 
 const servicesOptions = [
@@ -18,20 +19,24 @@ const servicesOptions = [
   "Otro requerimiento especial"
 ];
 
-export default function ContactSection({ showInfo = false }: ContactSectionProps) {
+export default function ContactSection({ showInfo = false, isSubpage = false }: ContactSectionProps) {
   const [selectedService, setSelectedService] = useState("Carga Sobredimensionada");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   return (
-    <section className="relative py-24 bg-gradient-to-b from-[#071324] to-[#0a1523] overflow-hidden" id="contacto">
-      {/* Soft top gradient line to transition from the light section */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand/30 to-transparent" />
+    <section className={`relative ${isSubpage ? 'py-12' : 'py-24 bg-gradient-to-b from-[#071324] to-[#0a1523]'} overflow-hidden z-20`} id="contacto">
+      {!isSubpage && (
+        <>
+          {/* Soft top gradient line to transition from the light section */}
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand/30 to-transparent" />
 
-      {/* Decorative Blur */}
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-yellow/5 rounded-full blur-[120px] pointer-events-none -z-10 translate-y-1/2 -translate-x-1/2"></div>
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 rounded-full blur-[120px] pointer-events-none -z-10 -translate-y-1/2 translate-x-1/2"></div>
+          {/* Decorative Blur */}
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-yellow/5 rounded-full blur-[120px] pointer-events-none -z-10 translate-y-1/2 -translate-x-1/2"></div>
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 rounded-full blur-[120px] pointer-events-none -z-10 -translate-y-1/2 translate-x-1/2"></div>
+        </>
+      )}
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-start">
           
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -39,54 +44,80 @@ export default function ContactSection({ showInfo = false }: ContactSectionProps
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-1 w-8 bg-brandLight rounded-full"></div>
-              <span className="text-brandLight font-bold tracking-wider text-xs sm:text-sm uppercase">
-                {showInfo ? "Información de Contacto" : "Contacto Directo"}
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
-              Hablemos de su Próximo Proyecto Logístico
-            </h2>
-            <p className="text-gray-300 mb-10 font-light leading-relaxed text-base sm:text-lg opacity-90">
-              Estamos listos para evaluar sus requerimientos operacionales y diseñar la solución óptima para su carga, garantizando continuidad y seguridad. <strong className="text-darker bg-yellow px-2 py-0.5 rounded font-bold">Operamos 24/7.</strong>
-            </p>
+            {!isSubpage && (
+              <>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-1 w-8 bg-brandLight rounded-full"></div>
+                  <span className="text-brandLight font-bold tracking-wider text-xs sm:text-sm uppercase">
+                    {showInfo ? "Información de Contacto" : "Contacto Directo"}
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
+                  Hablemos de su Próximo Proyecto Logístico
+                </h2>
+                <p className="text-gray-300 mb-10 font-light leading-relaxed text-base sm:text-lg opacity-90">
+                  Estamos listos para evaluar sus requerimientos operacionales y diseñar la solución óptima para su carga, garantizando continuidad y seguridad. <strong className="text-darker bg-yellow px-2 py-0.5 rounded font-bold">Operamos 24/7.</strong>
+                </p>
+              </>
+            )}
 
             {showInfo ? (
               <div className="space-y-8">
                 <div className="flex items-start gap-5 group">
-                  <div className="bg-white/5 p-4 rounded-2xl text-brandLight border border-white/10 shadow-lg group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300">
+                  <div className="bg-white/5 p-4 rounded-2xl text-brandLight border border-white/10 shadow-lg group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300 mt-1 flex-shrink-0">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-white mb-2 group-hover:text-brandLight transition-colors">Oficinas y Bases Operativas</h4>
-                    <ul className="space-y-2 text-gray-400 font-light">
-                      <li><strong className="text-gray-200 font-semibold">Casa Matriz Iquique:</strong> Bernardo O&apos;Higgins 1426</li>
-                      <li><strong className="text-gray-200 font-semibold">Base Pozo Almonte:</strong> Av. Comercio 03</li>
+                    <ul className="space-y-4 text-gray-400 font-light mt-4">
+                      <li>
+                        <strong className="text-gray-200 font-semibold block mb-1">Casa Matriz Iquique:</strong> 
+                        <a href="https://maps.google.com/?q=Bernardo+O'Higgins+1426,+Iquique,+Chile" target="_blank" rel="noopener noreferrer" className="hover:text-brandLight transition-colors underline decoration-white/20 underline-offset-4 flex items-center gap-2">
+                          Bernardo O&apos;Higgins 1426
+                        </a>
+                      </li>
+                      <li>
+                        <strong className="text-gray-200 font-semibold block mb-1">Base Pozo Almonte:</strong> 
+                        <a href="https://maps.google.com/?q=Av.+Comercio+03,+Pozo+Almonte,+Chile" target="_blank" rel="noopener noreferrer" className="hover:text-brandLight transition-colors underline decoration-white/20 underline-offset-4 flex items-center gap-2">
+                          Av. Comercio 03
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-5 group">
-                  <div className="bg-white/5 p-4 rounded-2xl text-yellow border border-white/10 shadow-lg group-hover:bg-yellow group-hover:text-darker group-hover:border-yellow transition-all duration-300">
+                  <div className="bg-white/5 p-4 rounded-2xl text-yellow border border-white/10 shadow-lg group-hover:bg-yellow group-hover:text-darker group-hover:border-yellow transition-all duration-300 mt-1 flex-shrink-0">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-white mb-2 group-hover:text-yellow transition-colors">Comuníquese Directamente</h4>
-                    <ul className="space-y-2 text-gray-400 font-light">
-                      <li><strong className="text-gray-200 font-semibold">Gerencia (Rubén García):</strong> +56 9 81574065</li>
-                      <li><strong className="text-gray-200 font-semibold">Admin. (Ivette Mamani):</strong> +56 9 33162517</li>
-                    </ul>
+                    <div className="flex flex-col gap-3 mt-4">
+                      <a href="tel:+56981574065" className="flex items-center justify-between p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-yellow/50 hover:bg-yellow/10 hover:shadow-[0_0_15px_rgba(255,106,0,0.15)] transition-all group/phone">
+                        <div className="flex flex-col">
+                          <span className="text-gray-200 font-bold text-sm">Gerencia General</span>
+                          <span className="text-gray-400 font-light text-xs">Rubén García</span>
+                        </div>
+                        <span className="text-yellow font-bold tracking-wide group-hover/phone:scale-105 transition-transform">+56 9 8157 4065</span>
+                      </a>
+                      <a href="tel:+56933162517" className="flex items-center justify-between p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-yellow/50 hover:bg-yellow/10 hover:shadow-[0_0_15px_rgba(255,106,0,0.15)] transition-all group/phone">
+                        <div className="flex flex-col">
+                          <span className="text-gray-200 font-bold text-sm">Administración</span>
+                          <span className="text-gray-400 font-light text-xs">Ivette Mamani</span>
+                        </div>
+                        <span className="text-yellow font-bold tracking-wide group-hover/phone:scale-105 transition-transform">+56 9 3316 2517</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-5 group">
-                  <div className="bg-white/5 p-4 rounded-2xl text-brandLight border border-white/10 shadow-lg group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300">
+                  <div className="bg-white/5 p-4 rounded-2xl text-brandLight border border-white/10 shadow-lg group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300 mt-1 flex-shrink-0">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-white mb-2 group-hover:text-brandLight transition-colors">Correos Electrónicos</h4>
-                    <ul className="space-y-2 text-gray-400 font-light text-sm">
+                    <ul className="space-y-2 text-gray-400 font-light text-sm mt-4">
                       <li><a href="mailto:ruben.g@tmnspa.com" className="hover:text-brandLight transition-colors">ruben.g@tmnspa.com</a></li>
                       <li><a href="mailto:ivette.m@tmnspa.com" className="hover:text-brandLight transition-colors">ivette.m@tmnspa.com</a></li>
                       <li><a href="mailto:operaciones@tmnspa.com" className="hover:text-brandLight transition-colors">operaciones@tmnspa.com</a></li>
